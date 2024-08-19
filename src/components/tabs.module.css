@@ -1,0 +1,42 @@
+.tab {
+  font-weight: 500;
+  padding: 0;
+  font-size: 14px !important;
+  border-radius: 0px 0px 0px 1px;
+  /* @apply text-neutral-700 flex; */
+}
+.tabLabel {
+  font-size: 14px !important;
+}
+.tabLabel div .count {
+  display: none;
+}
+
+.tab[data-active] {
+  border: none;
+  padding: 0 ;
+  /* border-inline-start: 1px solid #3851dd; */
+  /* @apply bg-blue50 text-neutral-700; */
+}
+.tab:hover {
+  border: none;
+  /* background-color: #f0f4fe !important; */
+}
+.tab[data-active] .tabLabel .count {
+  display: inline-block;
+}
+.list::before {
+  border: none;
+}
+.input {
+  @apply rounded-[6px] p-[6px_12px_6px_8px];
+}
+.input:focus {
+  border-color: #3851dd;
+}
+.list {
+  @apply flex flex-col gap-5;
+}
+.root {
+  @apply flex gap-6;
+}
