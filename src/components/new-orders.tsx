@@ -4,7 +4,7 @@ import { Button } from "@mantine/core";
 import { Eye, Setting4 } from "iconsax-react";
 import React from "react";
 import Table from "./table";
-import { useCustomTable } from "@/utilis/hooks/custom-table-data";
+import { useCustomTable } from "@/utils/hooks/custom-table-data";
 
 import { ColumnDef } from "@tanstack/react-table";
 import { unAccepted } from "./data/orders-data";
@@ -17,32 +17,44 @@ export default function NewOrder() {
     {
       accessorKey: "id",
       header: "Order ID",
-      cell: (info) => <p>{info.getValue() as string}</p>,
+      cell: (info) => (
+        <p className="text-nowrap">{info.getValue() as string}</p>
+      ),
     },
     {
       accessorKey: "name",
       header: "Customer Name",
-      cell: (info) => <p>{info.getValue() as string}</p>,
+      cell: (info) => (
+        <p className="text-nowrap">{info.getValue() as string}</p>
+      ),
     },
     {
       accessorKey: "date",
       header: "Date",
-      cell: (info) => <p>{info.getValue() as string}</p>,
+      cell: (info) => (
+        <p className="text-nowrap">{info.getValue() as string}</p>
+      ),
     },
     {
       accessorKey: "time",
       header: "Time",
-      cell: (info) => <p>{info.getValue() as string}</p>,
+      cell: (info) => (
+        <p className="text-nowrap">{info.getValue() as string}</p>
+      ),
     },
     {
       accessorKey: "amount",
       header: "Amount",
-      cell: (info) => <p>{info.getValue() as string}</p>,
+      cell: (info) => (
+        <p className="text-nowrap">{info.getValue() as string}</p>
+      ),
     },
     {
       accessorKey: "payment_type",
       header: "Payment Type",
-      cell: (info) => <p>{info.getValue() as string}</p>,
+      cell: (info) => (
+        <p className="text-nowrap">{info.getValue() as string}</p>
+      ),
     },
     {
       accessorKey: "status",

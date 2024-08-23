@@ -13,7 +13,7 @@ import React, { useState } from "react";
 import { BiDish } from "react-icons/bi";
 import Logo from "./logo";
 import { usePathname, useRouter } from "next/navigation";
-import { AsideAtom } from "@/utilis/hooks/querystore";
+import { AsideAtom } from "@/utils/hooks/querystore";
 import { cookieStorage, usePortal } from "@ibnlanre/portal";
 
 export default function Aside() {

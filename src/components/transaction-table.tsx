@@ -1,5 +1,5 @@
 "use client";
-import { useCustomTable } from "@/utilis/hooks/custom-table-data";
+import { useCustomTable } from "@/utils/hooks/custom-table-data";
 import { ColumnDef } from "@tanstack/react-table";
 import dayjs from "dayjs";
 import { Eye } from "iconsax-react";
@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import React from "react";
 import { transactionData } from "./data/transaction-data";
 import Table from "./table";
+import TablePagination from "@/utils/pagination";
 
 export default function TransactionTable() {
   const { push } = useRouter();
@@ -64,5 +65,10 @@ export default function TransactionTable() {
     tableData: transactionData,
     columns: column,
   });
-  return <Table table={table} />;
+  return (
+    <>
+      <Table table={table} />
+      <TablePagination />
+    </>
+  );
 }

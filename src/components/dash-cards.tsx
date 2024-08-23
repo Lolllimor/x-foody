@@ -27,7 +27,7 @@ export default function DashCards() {
   ];
 
   return (
-    <div className="flex  gap-[20px] w-full flex-wrap">
+    <div className="flex gap-[20px] w-full flex-wrap">
       {details.map((item, idx) => (
         <div
           key={idx}

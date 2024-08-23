@@ -3,16 +3,36 @@
 import { ColumnDef } from "@tanstack/react-table";
 import { Eye, Edit2, Trash } from "iconsax-react";
 import React, { useContext } from "react";
-import { useCustomTable } from "@/utilis/hooks/custom-table-data";
+import { useCustomTable } from "@/utils/hooks/custom-table-data";
 import Table from "./table";
 import { staffData } from "./data/staff-data";
 import AddNewStaff from "./add-new-staff";
 import { IModalContext, ModalContext } from "@/providers/modal-provider";
 import { useRouter } from "next/navigation";
+import { faker } from "@faker-js/faker";
 
 export default function StaffTable() {
   const { setModalState } = useContext(ModalContext) as IModalContext;
   const { push } = useRouter();
+  const generateStaffData = (count: number) => {
+    const staffData = [];
+
+    for (let i = 0; i < count; i++) {
+      const name = faker.person.fullName();
+      staffData.push({
+        staffID: faker.number.int({ min: 1000, max: count + 1000 }),
+        name: name,
+        contact: faker.phone.number("501-###-###"),
+        email: faker.internet.email(name),
+        status: faker.helpers.arrayElement(["active", "inactive"]),
+      });
+    }
+
+    return staffData;
+  };
+
+  const staffData = generateStaffData(120);
+
   const column: ColumnDef<any>[] = [
     {
       accessorKey: "staffID",

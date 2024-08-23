@@ -91,12 +91,7 @@ export default function Login() {
               <hr className="w-full" />
             </div>
             <LoginBtn />
-            {/* <button
-                disabled
-                className="px-[66px] py-[13px]  bg-red-600 rounded-[10px] text-white w-full"
-              >
-                Login
-              </button> */}
+          
           </div>
         </div>
       </div>

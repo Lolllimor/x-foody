@@ -1,7 +1,7 @@
 "use client";
 
-import { useCustomTable } from "@/utilis/hooks/custom-table-data";
-import {  Tabs } from "@mantine/core";
+import { useCustomTable } from "@/utils/hooks/custom-table-data";
+import { Tabs } from "@mantine/core";
 import { ColumnDef } from "@tanstack/react-table";
 import { Eye, Trash } from "iconsax-react";
 import React, { useContext, useState } from "react";
@@ -22,7 +22,7 @@ const TrashContent = ({ id }: { id: number }) => {
     <div
       onClick={() => {
         setModalState({
-          component: <Delete id={ id} />,
+          component: <Delete id={id} />,
           opened: true,
         });
       }}

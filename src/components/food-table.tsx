@@ -1,6 +1,6 @@
 "use client";
 
-import { useCustomTable } from "@/utilis/hooks/custom-table-data";
+import { useCustomTable } from "@/utils/hooks/custom-table-data";
 import { ColumnDef } from "@tanstack/react-table";
 import { Edit2, Eye, Trash } from "iconsax-react";
 import React, { useContext, useState } from "react";

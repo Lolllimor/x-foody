@@ -10,7 +10,7 @@ export default function AppLayout({
   children,
   pageTitle,
   arrayCrumb,
-  previous,
+
 }: {
   children: ReactNode;
   pageTitle?: string;
@@ -19,11 +19,11 @@ export default function AppLayout({
 }) {
   const { back } = useRouter();
   return (
-    <main className="h-screen bg-[#A7A19E0D] flex">
+    <main className="h-screen bg-[#A7A19E0D] flex  overflow-auto">
       <Aside />
-      <div className="flex flex-1 flex-col">
+      <section className="flex flex-1 flex-col overflow-auto">
         <Header />
-        <section className="flex flex-1 p-[30px] flex-col gap-[10px] overflow-auto">
+        <div className="flex flex-1 p-[30px] flex-col gap-[10px] overflow-auto">
           <p className="text-[24px] font-[700] leading-[36px] text-[#201A18]">
             {pageTitle}
           </p>
@@ -43,12 +43,11 @@ export default function AppLayout({
               </p>
             </div>
           ) : null}
-          <div className="flex flex-col gap-[20px] bg-white p-[20px] rounded-2xl">
-           
+          <div className="flex flex-col gap-[20px] bg-white p-[20px] rounded-2xl overflow-auto">
             {children}
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </main>
   );
 }

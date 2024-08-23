@@ -45,19 +45,7 @@ export default function DashCharts() {
       );
     }
 
-    //   export default function DashCharts() {
-    // const CustomTooltip: React.FC<CustomTooltipProps> = ({ active, payload }) => {
-    //   if (active && payload && payload.length) {
-    //     return (
-    //       <div className="custom-tooltip bg-blue600 py-1 bg-white rounded-[8px] text-black  flex flex-col justify-center items-center px-2">
-    //         <p className="text-[16px] font-[700] leading-6">{`$${payload[0].value}`}</p>
-    //       </div>
-    //     );
-    //   }
-
-    //   return null;
-    // };
-
+  
     return null;
   };
   const data = [
@@ -112,8 +100,8 @@ export default function DashCharts() {
   ];
 
   return (
-    <section className="flex gap-[20px] w-full flex-1 min-h-[327px]">
-      <div className="w-[50%] bg-white rounded-[16px] p-[20px] flex flex-col gap-[30px]">
+    <section className="flex gap-[20px] w-full  overflow-x-auto  h-[100%] min-h-[330px] no-scrollbar">
+      <div className="max-w-[504px] min-w-[504px]  bg-white rounded-[16px] p-[20px] flex flex-col gap-[30px]">
         <div className="flex justify-between">
           <p className="text-[20px] font-[700] leading-[30px]">Total Revenue</p>
           <Filter />
@@ -182,7 +170,7 @@ export default function DashCharts() {
           </AreaChart>
         </ResponsiveContainer>
       </div>
-      <div className="w-[50%] bg-white rounded-[16px] p-[20px] flex flex-col gap-[30px]">
+      <div className=" max-w-[504px] min-w-[504px] min-h-[327px] bg-white rounded-[16px] p-[20px] flex flex-col gap-[30px] ">
         <div className="flex justify-between">
           <p className="text-[20px] font-[700] leading-[30px]">Total Orders</p>
           <Menu>

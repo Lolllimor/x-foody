@@ -27,7 +27,7 @@ export default function Table({
                     colSpan={header.colSpan}
                     className={`${
                       (index === arr.length - 1 && "!pr-6",
-                      "table-heading  pb-[10px] cursor-pointer text-nowrap text-[16px] text-[#A7A19E] leading-6 font-[400]")
+                      "table-heading !pl-6  pb-[10px] cursor-pointer text-nowrap text-[16px] text-[#A7A19E] leading-6 font-[400]")
                     }`}
                   >
                     {header.isPlaceholder ? null : (
@@ -52,7 +52,7 @@ export default function Table({
             </tr>
           ))}
         </thead>
-        <tbody className="pt-[22px]" >
+        <tbody className="pt-[22px] " >
           {table.getRowModel().rows.map((row, idx, arr) => {
             return (
               <tr
@@ -74,7 +74,10 @@ export default function Table({
                           ? onRowClick(row.original)
                           : {}
                       }
-                      className={`${"table-cells-normal text-[#201A18] text-[16px] leading-6"}`}
+                      className={`${
+                        (idx === arr.length - 1 && "!border-b-0",
+                        "table-cells-normal !pl-6  text-[#201A18] text-[16px] leading-6")
+                      }`}
                     >
                       {flexRender(
                         cell.column.columnDef.cell,

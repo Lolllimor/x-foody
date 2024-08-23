@@ -10,7 +10,7 @@ export default function Header() {
   if (!info) return;
   const parsedInfo = JSON.parse(info);
   return (
-    <section className=" py-[21px] px-[30px] bg-white justify-between flex">
+    <div className=" py-[21px] px-[30px] bg-white justify-between flex items-center">
       <div>
         <TextInput
           styles={{
@@ -59,6 +59,6 @@ export default function Header() {
           <NotificationBing size={24} />
         </div>
       </div>
-    </section>
+    </div>
   );
 }
