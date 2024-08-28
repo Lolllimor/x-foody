@@ -1,22 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url("https://fonts.googleapis.com/css2?family=Poller+One&display=swap");
-@import url("https://fonts.cdnfonts.com/css/poppins");
+@import url('https://fonts.cdnfonts.com/css/poppins');
+/* @import url('https://fonts.cdnfonts.com/css/poller-one'); */
 
 @layer base {
   html {
-    font-family: "Poppins", sans-serif;
-  }
-  .logo {
-    font-family: "Poller One", serif !important;
+    font-family: 'Poppins', sans-serif;
   }
 }
 
-*,body {
+*,
+body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+.logo {
+  font-family: 'Poller One', sans-serif;
 }
 
 td {
@@ -41,7 +42,7 @@ td {
 }
 
 .family {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .btn-diasbled {

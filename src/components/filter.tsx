@@ -4,10 +4,6 @@ import React from "react";
 
 export default function Filter() {
   return (
-    // <button className="py-2.5 px-[15px] items-center bg-blue600 rounded-[8px] border border-[#A7A19E55] flex gap-[7px]">
-    //   <p className="text-[12px] leading-[18px] text-[#201A18] font-[500]">Filter</p>
-    //   <Setting4 size={15} color="#201A18" />
-    // </button>
     <Button
       disabled
       styles={{

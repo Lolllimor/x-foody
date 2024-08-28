@@ -2,8 +2,40 @@ import { Pagination, Select } from "@mantine/core";
 import { ArrowDown2 } from "iconsax-react";
 import React from "react";
 import paginationStyle from "../src/components/common/modules/pagination.module.css";
+import { Atom } from "@ibnlanre/portal";
+import { useSearchParams } from "next/navigation";
 
-export default function TablePagination() {
+interface PaginationProps {
+  queryAtom?: Atom<any, undefined>;
+  totalCount: number;
+}
+function useUrlParams<T = string>(search?: string) {
+  const searchParams = useSearchParams();
+  let query;
+  if (search) query = searchParams.get(search) as T;
+
+  function pushParam(param: { key: string; value: string | number }) {
+    const params = new URLSearchParams(searchParams.toString());
+    param.value = String(param.value);
+    params.set(param.key, param.value);
+    window.history.replaceState(null, "", `?${params.toString()}`);
+  }
+  return { query, pushParam };
+}
+
+export default function TablePagination({
+  queryAtom,
+  totalCount,
+}: PaginationProps) {
+  const searchParams = useSearchParams();
+  const pageSizeParam = searchParams.get("page_size");
+  const { pushParam, query: pageParam } = useUrlParams("page");
+
+  const page = pageParam ? +pageParam : 1;
+  const pageSize = pageSizeParam ? +pageSizeParam : 10;
+  const totalPage = Math.ceil(totalCount / pageSize);
+  const currentTotakCountBasedOnPage = pageSize * page;
+
   return (
     <div className="flex justify-between items-center w-full">
       <div className="flex items-center gap-[20px]">

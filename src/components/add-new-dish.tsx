@@ -1,7 +1,11 @@
+
 import { Switch, TextInput } from "@mantine/core";
-import React from "react";
+import React, { useContext } from "react";
+import Button from "./common/button";
+import { ModalContext, IModalContext } from "@/providers/modal-provider";
 
 export default function AddNewDish() {
+  const { close } = useContext(ModalContext) as IModalContext;
   return (
     <div className="bg-white flex flex-col p-[20px] rounded-[20px] w-fit h-fit gap-[20px]">
       <div className="flex flex-col gap-[16px]">
@@ -50,12 +54,9 @@ export default function AddNewDish() {
         }}
       />
       <div className="flex gap-[11px] pt-[10px]">
-        <button className="px-[66px] py-[13px] bg-[#A7A19E1A] rounded-[10px] ">
-          Cancel
-        </button>
-        <button className="px-[66px] py-[13px] bg-red-600 rounded-[10px] text-white">
-          Add
-        </button>
+        <Button classnames="bg-[#A7A19E1A]"  onClick={() => close()} text="Cancel" />
+        <Button classnames="bg-[#dc2626] text-[#fff]" text="Add" />
+    
       </div>
     </div>
   );

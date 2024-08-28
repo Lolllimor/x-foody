@@ -14,6 +14,7 @@ export default function MenuHeader() {
       extraButton={
         <button
           onClick={() => {
+            console.log("hiii")
             setModalState({
               component: <AddNewDish />,
               opened: true,

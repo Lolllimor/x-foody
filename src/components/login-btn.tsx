@@ -6,6 +6,7 @@ import Image from "next/image";
 import axios from "axios";
 import { cookieStorage } from "@ibnlanre/portal";
 import { useRouter } from "next/navigation";
+import { Button } from "@mantine/core";
 
 export default function LoginBtn() {
   const { push } = useRouter();
@@ -32,7 +33,7 @@ export default function LoginBtn() {
     },
   });
   return (
-    <button
+    <Button loading 
       onClick={() => login()}
       className="px-[66px] gap-[5px] font-[500] flex justify-center border h-[50px] border-[#DAD9DA] items-center rounded-[10px] text-[#2B2930] w-full"
     >
@@ -44,6 +45,6 @@ export default function LoginBtn() {
         height={25}
         width={80}
       />
-    </button>
+    </Button>
   );
 }

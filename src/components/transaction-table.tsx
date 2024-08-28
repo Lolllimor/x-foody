@@ -68,7 +68,7 @@ export default function TransactionTable() {
   return (
     <>
       <Table table={table} />
-      <TablePagination />
+      {/* <TablePagination /> */}
     </>
   );
 }

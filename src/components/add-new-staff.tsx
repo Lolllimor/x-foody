@@ -4,6 +4,7 @@ import { IModalContext, ModalContext } from "@/providers/modal-provider";
 import { Select, Switch, TextInput } from "@mantine/core";
 import { ArrowDown2 } from "iconsax-react";
 import React, { useContext } from "react";
+import Button from "./common/button";
 
 export default function AddNewStaff() {
   const { close } = useContext(ModalContext) as IModalContext;
@@ -55,17 +56,9 @@ export default function AddNewStaff() {
         ]}
       />
       <div className="flex gap-[11px] pt-[10px]">
-        <button
-          className="px-[66px] py-[13px] bg-[#A7A19E1A] rounded-[10px] "
-          onClick={() => {
-            close();
-          }}
-        >
-          Cancel
-        </button>
-        <button className="px-[66px] py-[13px] bg-red-600 rounded-[10px] text-white">
-          Add
-        </button>
+         <Button classnames="bg-[#A7A19E1A]"  onClick={() => close()} text="Cancel" />
+        <Button classnames="bg-[#dc2626] text-[#fff]" text="Add" />
+        
       </div>
     </div>
   );
