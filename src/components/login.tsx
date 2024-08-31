@@ -53,8 +53,8 @@ export default function Login() {
   return (
     <section className=" w-full gap-[50px] justify-center items-center flex flex-1 overflow-auto bg-[url('/images/login.jpg')] bg-cover bg-no-repeat">
       <div className="flex justify-center items-center overflow-auto filter backdrop-filter backdrop-blur-[5px] h-full w-full ">
+        <LoadingOverlay visible={loading} />
         <div className="relative flex flex-col items-center gap-[12%] overflow-auto justify-center min-h-[400px] p-[30px] max-h-[90vh] h-[650px] bg-white rounded-2xl max-w-[80vw] min-w-[445px]">
-          <LoadingOverlay visible={loading} />
           <div className="flex gap-2 items-center w-[445px] justify-center">
             <Image
               src="/images/logo.svg"
@@ -147,12 +147,13 @@ export default function Login() {
                   label: {
                     display: 'flex',
                     gap: '5px',
-                    alignItems: 'center', width:"100%"
+                    alignItems: 'center',
+                    width: '100%',
                   },
                 }}
                 onClick={() => login()}
-                className="px-[66px] w-full !gap-[5px] font-[500] flex justify-center border !bg-transparent h-[50px] !border-[#DAD9DA] items-center rounded-[10px] text-[#2B2930] "
-                disabled={loading} // Disable the button while loading
+                className="px-[66px] w-full !gap-[5px] font-[500] flex justify-center border !bg-transparent h-[50px] !border-[#DAD9DA] items-center hover:text-[#2B2930] rounded-[10px] text-[#2B2930] "
+                disabled={loading}
               >
                 Continue with{' '}
                 <Image
