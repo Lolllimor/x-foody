@@ -19,7 +19,7 @@ export default function RootLayout({
           rel="stylesheet"
         ></link>
       </head>
-      <body>
+      <body className="min-h-screen bg-gradient-to-br from-stone-50 via-white to-stone-100">
         <GoogleOAuthProvider
           clientId={process.env.NEXT_PUBLIC_CLIENT_ID as string}
         >
